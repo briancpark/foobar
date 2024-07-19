@@ -1,5 +1,6 @@
 import itertools
 
+
 def convert_to_path(perm):
     perm = list(perm)
     perm = [0] + perm + [-1]
@@ -7,6 +8,7 @@ def convert_to_path(perm):
     for i in range(1, len(perm)):
         path.append((perm[i - 1], perm[i]))
     return path
+
 
 def solution(times, times_limit):
     rows = len(times)

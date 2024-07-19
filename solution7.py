@@ -3,7 +3,8 @@
 # https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
 # https://cseweb.ucsd.edu/~dasgupta/book/index.html
 
-#A maxflow min cut problem, using a modificaiton of ford fulkerson algorithm
+# A maxflow min cut problem, using a modificaiton of ford fulkerson algorithm
+
 
 def solution(entrances, exits, path):
     # Your code here
@@ -56,27 +57,27 @@ def bfs(matrix, start, end):
 
                     total = float("inf")
                     curr = start
-                    
+
                     for j in range(1, len(path) - 1):
                         entry = matrix[curr][path[j]]
                         total = min(total, abs(entry[1]) - entry[0])
                         curr = path[j]
 
                     curr = start
-                    
+
                     for j in range(1, len(path) - 1):
                         entry = matrix[curr][path[j]]
-                        if entry[1] < 0: 
+                        if entry[1] < 0:
                             entry[1] += total
                         else:
                             entry[0] += total
                         entry = matrix[path[j]][curr]
-                        if entry[1] <= 0: 
+                        if entry[1] <= 0:
                             entry[1] -= total
                         else:
                             entry[0] += total
                         curr = path[j]
-                        
+
                     return True
                 else:
                     visited[i] = node

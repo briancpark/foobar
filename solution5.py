@@ -1,9 +1,9 @@
 def solution(n):
     # Your code here
     n = int(n)
-    
+
     steps = 0
-    
+
     while True:
         if n == 1:
             return steps
@@ -14,9 +14,10 @@ def solution(n):
         else:
             n = n + 1
         steps += 1
-    
-    #return solution_helper(n, steps)
-    
+
+    # return solution_helper(n, steps)
+
+
 # Recursive solution (not working because it's slower?)
 def solution_helper(n, steps):
     if n == 1:

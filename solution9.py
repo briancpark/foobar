@@ -9,13 +9,33 @@ def solution(g):
 
     for i in range(y - 1):
         for j in range(x - 1):
-            if g[i][j] is True and g[i][j + 1] is False and g[i + 1][j] is False and g[i + 1][j + 1] is False:
+            if (
+                g[i][j] is True
+                and g[i][j + 1] is False
+                and g[i + 1][j] is False
+                and g[i + 1][j + 1] is False
+            ):
                 c[i][j] = True
-            if g[i][j] is False and g[i][j + 1] is False and g[i + 1][j] is False and g[i + 1][j + 1] is False:
+            if (
+                g[i][j] is False
+                and g[i][j + 1] is False
+                and g[i + 1][j] is False
+                and g[i + 1][j + 1] is False
+            ):
                 c[i][j] = True
-            if g[i][j] is False and g[i][j + 1] is False and g[i + 1][j] is True and g[i + 1][j + 1] is False:
+            if (
+                g[i][j] is False
+                and g[i][j + 1] is False
+                and g[i + 1][j] is True
+                and g[i + 1][j + 1] is False
+            ):
                 c[i][j] = True
-            if g[i][j] is False and g[i][j + 1] is False and g[i + 1][j] is False and g[i + 1][j + 1] is True:
+            if (
+                g[i][j] is False
+                and g[i][j + 1] is False
+                and g[i + 1][j] is False
+                and g[i + 1][j + 1] is True
+            ):
                 c[i][j] = True
 
     counter = 0
@@ -29,14 +49,12 @@ def solution(g):
     return counter
 
 
-#solution([[True, True, False, True, False, True, False, True, True, False], [True, True, False, False, False, False, True, True, True, False], [True, True, False, False, False, False, False, False, False, True], [False, True, False, False, False, False, True, True, False, False]])
-#11567
+# solution([[True, True, False, True, False, True, False, True, True, False], [True, True, False, False, False, False, True, True, True, False], [True, True, False, False, False, False, False, False, False, True], [False, True, False, False, False, False, True, True, False, False]])
+# 11567
 
-solution([[True, False, True],
-          [False, True, False],
-          [True, False, True]])
-#4
+solution([[True, False, True], [False, True, False], [True, False, True]])
+# 4
 
 
-#solution([[True, False, True, False, False, True, True, True], [True, False, True, False, False, False, True, False], [True, True, True, False, False, False, True, False], [True, False, True, False, False, False, True, False], [True, False, True, False, False, True, True, True]])
-#254
+# solution([[True, False, True, False, False, True, True, True], [True, False, True, False, False, False, True, False], [True, True, True, False, False, False, True, False], [True, False, True, False, False, False, True, False], [True, False, True, False, False, True, True, True]])
+# 254
